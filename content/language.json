@@ -28,7 +28,7 @@
     "footer": {
         "copyright": {
             "en": "Copyright © 2024 Praromvik.",
-            "bn": "© ২০২৪ প্রারম্ভিক(সর্বস্বত্ব সংরক্ষিত)"
+            "bn": "© ২০২৪ প্রারম্ভিক (সর্বস্বত্ব সংরক্ষিত)"
         },
         "developer": {
              "header": {
@@ -36,8 +36,8 @@
                 "bn": "প্রারম্ভিক"
              },
              "description": {
-                "en": "Praromvik is the key to new stacks in tech world.Our goal is to keep Bangladesh always a step ahead",
-                "bn": "প্রারমবিক নতুন প্রযুক্তির একটি গ্রন্থনামা। বাংলাদেশকে তথ্য ও প্রযুক্তিতে এক ধাপ এগিয়ে রাখা প্রারম্ভিক এর মুল লক্ষ্য"
+                "en": "Praromvik is the key to new stacks in the tech world. Our goal is to keep Bangladesh always a step ahead",
+                "bn": "প্রারম্ভিক হলো প্রযুক্তি দুনিয়ার নিত্য নতুন স্ট্যাকের সাথে পা মিলিয়ে চলার এক পথিকৃৎ । বাংলাদেশকে তথ্য ও প্রযুক্তিতে এক ধাপ এগিয়ে রাখাই এর মুল লক্ষ্য"
              }
         },
         "connect": {
@@ -126,7 +126,7 @@
         "bn": "আপনার পাসওয়ার্ড ভুলে গেছেন?"
       },
       "noAccount":{
-        "en": "Don't have an account",
+        "en": "Don't have an account?",
         "bn": "অ্যাকাউন্ট নেই?"
       },
       "signup": {
@@ -137,8 +137,8 @@
     },
     "hero": {
       "welcome":  {
-        "en": "Welcome to Praromvik",
-        "bn": "প্রারম্ভিক কে আপনাকে স্বাগতম "
+        "en": "Welcome to Praromvik !",
+        "bn": "প্রারম্ভিকে আপনাকে স্বাগতম !"
       },
       "moto": {
         "en": "Let's start your learning journey with praromvik", 
