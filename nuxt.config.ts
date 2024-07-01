@@ -17,7 +17,7 @@ export default defineNuxtConfig({
     strictNuxtContentPaths: true,
   },
   site: {
-    url: 'https://blog.nurriyad.xyz',
+    url: 'http://praromvik.org',
     identity: {
       type: 'Person',
     },
@@ -55,7 +55,6 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     'nuxt-simple-sitemap',
     '@nuxtjs/tailwindcss',
-    'nuxt-primevue',
     '@pinia/nuxt',
   ],
 

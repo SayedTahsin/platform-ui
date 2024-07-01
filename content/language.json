@@ -16,6 +16,10 @@
         "en": "Login",
         "bn": "লগইন"
       },
+       "category": {
+        "en": "Categories",
+        "bn": "ক্যাটাগরি সমূহ"
+       },
       "EN": {
         "en": "en",
         "bn": "ইংরেজি"
@@ -149,8 +153,8 @@
         "bn": "শিখার উপকরণ ঘণ্টায়"
       },
       "students": {
-        "en": "Number of Students Enrolled", 
-        "bn": "মোট যত শিক্ষার্থী ভর্তি হয়েছে"
+        "en": "Website Visitors", 
+        "bn": "ওয়েবসাইট পরিদর্শন করেছে "
       }
     },
     "courses": {
@@ -159,6 +163,16 @@
         "bn": "নির্বাচিত কোর্সসমূহ"
       }
       
+    },
+    "categoryhero": {
+      "category": {
+        "en": "Categories",
+        "bn": "ক্যাটাগরি সমূহ"
+       },
+      "description": {
+        "en": "Blow this category is generated from all the tags are mentioned in the different blog post", 
+        "bn": "আপনার পছন্দের ক্যাটাগরির টপিক বাছাই করে ঐ সম্পর্কে জ্ঞান অর্জন করুন "
+      }
     }
     
 }

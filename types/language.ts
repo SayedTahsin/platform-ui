@@ -15,6 +15,10 @@ export interface HeaderData {
     en?: string
     bn?: string
   }
+  category: {
+    en?: string
+    bn?: string
+  }
   EN: {
     en?: string
     bn?: string
@@ -159,6 +163,16 @@ export interface Hero {
 
 export interface Courses {
   featured: {
+    en?: string
+    bn?: string
+  }
+}
+export interface CategoryHero {
+  category: {
+    en?: string
+    bn?: string
+  }
+  description: {
     en?: string
     bn?: string
   }
