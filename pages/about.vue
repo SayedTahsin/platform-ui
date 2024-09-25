@@ -7,12 +7,13 @@ defineOgImageComponent('About', {
 </script>
 
 <template>
-  <div class="py-5 mt-8">
+  <div class="dark:bg-slate-950 min-h-screen">
+  <div class="py-5 mt-8 ">
     <div class="sm:grid grid-cols-8 px-6 py-5 sm:py-9 gap-5 container max-w-6xl  mx-auto">
       <div class="col-span-5  max-w-md">
         <div class="flex justify-between">
           <div>
-            <h1 class="text-xl sm:text-4xl  pb-2 font-bold ">
+            <h1 class="dark:text-zinc-300 font-semibold leading-tight text-4xl md:text-6xl my-5 ">
               Praromvik
             </h1>
 
@@ -61,11 +62,11 @@ defineOgImageComponent('About', {
             />
           </div>
         </div>
-        <h3 class="text-base sm:text-3xl font-semibold pb-7 sm:pb-12">
+        <h3 class="text-base sm:text-3xl font-semibold pb-7 sm:pb-12  text-gray-800  dark:text-[#F1F2F4]">
           Start Your DevOps Journey With US
         </h3>
 
-        <p>Praromvik is a learning platform. We offer training on DevOps tools like docker, kubernetes, helm, prometheus and so on. Our platform is designed for newbies as well as the professionals, who want to dive into the amazing world of the cloud.</p>
+        <p class="dark:text-[#F1F2F4]">Praromvik is a learning platform. We offer training on DevOps tools like docker, kubernetes, helm, prometheus and so on. Our platform is designed for newbies as well as the professionals, who want to dive into the amazing world of the cloud.</p>
       </div>
       <div class="hidden sm:block col-span-3">
         <NuxtImg
@@ -78,4 +79,5 @@ defineOgImageComponent('About', {
       </div>
     </div>
   </div>
+</div>
 </template>

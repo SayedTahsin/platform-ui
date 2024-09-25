@@ -15,7 +15,7 @@ const selectedlanguage = useCookie< string >('language', {
 
 <template>
   <div class="flex flex-col dark:text-zinc-300   my-5 md:my-0 md:justify-self-center">
-    <p class="text-black dark:text-zinc-300  text-base font-semibold">
+    <p class=" dark:text-zinc-300  text-base font-semibold">
       {{ footerData.link.all_links[selectedlanguage ? selectedlanguage as SupportedLanguage : appStore.language as SupportedLanguage] }}
     </p>
     <NuxtLink to="/" class="hover:underline">

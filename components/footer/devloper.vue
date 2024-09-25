@@ -15,7 +15,7 @@ const selectedlanguage = useCookie< string >('language', {
 
 <template>
   <div>
-    <p class="text-black dark:text-zinc-300   text-2xl py-1 font-semibold">
+    <p class=" dark:text-zinc-300   text-2xl py-1 font-semibold">
       {{ footerData.developer.header[selectedlanguage ? selectedlanguage as SupportedLanguage : appStore.language as SupportedLanguage] }}
     </p>
     <p class="py-2 dark:text-zinc-300  ">

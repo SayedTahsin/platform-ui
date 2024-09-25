@@ -15,7 +15,7 @@ const selectedlanguage = useCookie< string >('language', {
 
 <template>
   <div>
-    <p class="text-black dark:text-zinc-300   text-base font-semibold">
+    <p class=" dark:text-zinc-300   text-base font-semibold">
       {{ footerData.connect.contact[selectedlanguage ? selectedlanguage as SupportedLanguage : appStore.language as SupportedLanguage] }}
     </p>
     <p class="dark:text-zinc-300  ">

@@ -57,23 +57,26 @@ defineOgImage({
 </script>
 
 <template>
-  <main class="container max-w-6xl mx-auto text-zinc-600 px-4">
-    <CategoryTopic />
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      <BlogCard
-        v-for="post in formattedData"
-        :key="post.title"
-        :path="post.path"
-        :title="post.title"
-        :date="post.date"
-        :description="post.description"
-        :image="post.image"
-        :alt="post.alt"
-        :og-image="post.ogImage"
-        :tags="post.tags"
-        :published="post.published"
-      />
-      <BlogEmpty v-if="data?.length === 0" />
-    </div>
-  </main>
+  <div class="dark:bg-slate-950 min-h-screen w-full">
+    <main class="text-zinc-600 px-4 md:px-6">
+      <CategoryTopic />
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <BlogCard
+          v-for="post in formattedData"
+          :key="post.title"
+          :path="post.path"
+          :title="post.title"
+          :date="post.date"
+          :description="post.description"
+          :image="post.image"
+          :alt="post.alt"
+          :og-image="post.ogImage"
+          :tags="post.tags"
+          :published="post.published"
+        />
+        <BlogEmpty v-if="data?.length === 0" />
+      </div>
+    </main>
+  </div>
 </template>
+

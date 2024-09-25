@@ -36,13 +36,13 @@ withDefaults(defineProps<Props>(), {
         />
       </div>
       <div class="sm:col-span-7 p-5">
-        <h2 class="text-xl font-semibold text-black dark:text-zinc-300   pb-1 group-hover:text-sky-700 dark:group-hover:text-sky-400">
+        <h2 class="text-xl font-semibold  dark:text-zinc-300   pb-1 group-hover:text-sky-700 dark:group-hover:text-sky-400">
           {{ title }}
         </h2>
         <p class="text-ellipsis line-clamp-2">
           {{ description }}
         </p>
-        <div class="text-black dark:text-zinc-300   text-sm mt-2 mb-1 md:flex md:space-x-6">
+        <div class=" dark:text-zinc-300   text-sm mt-2 mb-1 md:flex md:space-x-6">
           <div class="flex items-center">
             <LogoDate />
             <p> {{ date }}</p>

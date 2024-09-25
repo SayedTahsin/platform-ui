@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
 export default defineNuxtConfig({
   app: {
@@ -12,7 +13,11 @@ export default defineNuxtConfig({
     pageTransition: { name: 'page', mode: 'out-in' },
     layoutTransition: { name: 'layout', mode: 'out-in' },
   },
-
+  runtimeConfig: {
+     public: {
+       backendDomain: process.env.NUXT_PUBLIC_BACKEND_DOMAIN
+     }
+  },
   sitemap: {
     strictNuxtContentPaths: true,
   },
@@ -45,6 +50,12 @@ export default defineNuxtConfig({
   },
 
   modules: [
+     (_options, nuxt) => {
+      nuxt.hooks.hook('vite:extendConfig', (config) => {
+        // @ts-expect-error
+        config.plugins.push(vuetify({ autoImport: true }))
+      })
+    },
     'nuxt-icon',
     '@nuxt/image',
     '@vueuse/nuxt',
@@ -56,6 +67,7 @@ export default defineNuxtConfig({
     'nuxt-simple-sitemap',
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
+    "@stefanobartoletti/nuxt-social-share"
   ],
 
   content: {
@@ -63,5 +75,14 @@ export default defineNuxtConfig({
       theme: 'dracula',
     },
   },
-
+  build: {
+    transpile: ['vuetify'],
+  },
+  vite: {
+      vue: {
+        template: {
+          transformAssetUrls,
+        },
+      },
+    },
 })

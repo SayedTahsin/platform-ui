@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import languages from '~/content/language.json'
-import type { HeaderData, SupportedLanguage } from '~/types/language'
 import { useAppStore } from '~/stores/appStore.js'
+import type { HeaderData, SupportedLanguage } from '~/types/language'
 
 const headerData: HeaderData = languages.header
 const route = useRoute()
 
 const path = computed(() => route.fullPath.replace('/', ''))
 const isMenuOpen = ref(false)
+const showDropdown = ref(false)
 // Access the store
 const appStore = useAppStore()
 
@@ -27,14 +28,27 @@ function toggleLanguage(language: string) {
   selectedlanguage.value = language
   appStore.setLanguage(language)
 }
+
+const  items= [
+        { title: 'Click Me' },
+        { title: 'Click Me' },
+        { title: 'Click Me' },
+        { title: 'Click Me 2' },
+      ]
+const praromvikCookies =  useCookie('PRAROMVIK')
+function handleLogout(){
+  praromvikCookies.value = undefined
+  window.location.href ='/'
+
+}
 </script>
 
 <template>
-  <div class="py-5 border-b dark:border-gray-800 font-semibold">
+  <div class="py-2 border-b dark:border-gray-800 font-semibold">
     <div class="flex px-6 container max-w-6xl justify-between mx-auto">
       <ul class="flex items-center space-x-5">
         <li class="text-base sm:flex font-bold">
-          <NuxtLink to="/" :class="{ underline: path === '' }" class="flex items-center space-x-2">
+          <NuxtLink to="/" class="flex items-center space-x-2">
             <NuxtImg src="/logo.png" width="115" height="80" quality="50" class="rounded-md" />
           </NuxtLink>
         </li>
@@ -44,7 +58,7 @@ function toggleLanguage(language: string) {
         <!-- This section is for Menu in desktop mode -->
         <ul class="hidden sm:flex items-center space-x-3 sm:space-x-6 text-sm sm:text-lg">
           <li title="Categories" :class="{ underline: path === 'categories' }">
-            <NuxtLink to="/categories" aria-label="About me">
+            <NuxtLink to="/categories" aria-label="Category">
               {{ headerData.category[selectedlanguage as SupportedLanguage] }}
             </NuxtLink>
           </li>
@@ -54,6 +68,7 @@ function toggleLanguage(language: string) {
             </NuxtLink>
           </li>
         </ul>
+
         <li>
           <ClientOnly>
             <button
@@ -69,7 +84,7 @@ function toggleLanguage(language: string) {
               <Icon name="noto:sun" size="20" />
             </button>
             <template #fallback>
-              <!-- this will be rendered on server side -->
+             
               <Icon name="svg-spinners:180-ring" size="20" />
             </template>
           </ClientOnly>
@@ -104,6 +119,26 @@ function toggleLanguage(language: string) {
             </li>
           </ClientOnly>
         </li>
+        <li v-if="praromvikCookies===undefined">
+          <NuxtLink to="/login">
+            <button class="bg-sky-700 rounded-xl text-white py-3 px-6 hover:scale-105 duration-300">
+              {{ headerData.login[selectedlanguage as SupportedLanguage] }}
+            </button>
+          </NuxtLink>
+        </li>
+        <li v-else>
+
+
+
+        <div class="profile-container" @click="showDropdown= !showDropdown">
+        <img src="../../assets/images/profile.png" class="profile-image" />
+        <div  v-if="showDropdown" class="dropdown-menu">
+          <!-- Dropdown content goes here -->
+
+          <h3 @click="handleLogout">Logout</h3>
+        </div>
+      </div>
+      </li>
 
         <!-- this div is for Hamburger menu -->
         <div class="sm:hidden relative">
@@ -136,5 +171,36 @@ function toggleLanguage(language: string) {
 </template>
 
 <style scoped>
-/* Add any additional styles if needed */
+.profile-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.profile-image {
+  width: 40px; /* Adjust size as needed */
+  height: 40px;
+  border-radius: 50%; /* Makes the image circular */
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Position the dropdown below the image */
+  left: 50%;  /* Align the dropdown horizontally with the center of the image */
+  transform: translateX(-50%); /* Center align the dropdown */
+  background-color: white; /* Default light mode background */
+  border: 1px solid #ccc;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 1000;
+  min-width: 150px; /* Optional: set a minimum width for the dropdown */
+  color: black; /* Default light mode text color */
+}
+
+/* Dark mode styles */
+.dark .dropdown-menu {
+  background-color: #333; /* Dark mode background */
+  border-color: #444; /* Dark mode border color */
+  color: white; /* Dark mode text color */
+}
 </style>

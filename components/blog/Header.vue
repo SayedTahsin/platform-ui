@@ -33,7 +33,7 @@ withDefaults(defineProps<Props>(), {
       {{ description }}
     </p>
     <div class="flex w-full justify-center text-xs md:text-base my-8">
-      <div class="md:flex text-black dark:text-zinc-300 content-center gap-8 text-xs sm:text-sm">
+      <div class="md:flex  dark:text-zinc-300 content-center gap-8 text-xs sm:text-sm">
         <div class="flex items-center font-semibold">
           <LogoDate />
           <p>{{ date || '' }}</p>

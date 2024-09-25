@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { BlogPost } from '@/types/blog'
 
+
 const { path } = useRoute()
 const { data: articles, error } = await useAsyncData(`blog-post-${path}`, () => queryContent(path).findOne())
 if (error.value)
@@ -84,27 +85,44 @@ defineOgImageComponent('Test', {
 </script>
 
 <template>
-  <div class="px-6 pt-4 container max-w-6xl mx-auto sm:grid grid-cols-12 gap-x-12 ">
-    <div class="col-span-12 lg:col-span-9">
-      <BlogHeader
-        :title="data.title"
-        :image="data.image"
-        :alt="data.alt"
-        :date="data.date"
-        :description="data.description"
-        :tags="data.tags"
-      />
-      <div
-        class="prose prose-pre:max-w-xs sm:prose-pre:max-w-full prose-sm sm:prose-base md:prose-lg
-        prose-h1:no-underline max-w-6xl mx-auto prose-zinc dark:prose-invert prose-img:rounded-lg"
-      >
-        <ContentRenderer v-if="articles" :value="articles">
-          <template #empty>
-            <p>No content found.</p>
-          </template>
-        </ContentRenderer>
+  <div class="dark:bg-slate-950 min-h-screen">
+    <div class="px-6 pt-4 max-w-6xl mx-auto sm:grid grid-cols-12 gap-x-12">
+      <div class="col-span-12 lg:col-span-9">
+        <BlogHeader
+          :title="data.title"
+          :image="data.image"
+          :alt="data.alt"
+          :date="data.date"
+          :description="data.description"
+          :tags="data.tags"
+        />
+        <div
+          class="prose prose-pre:max-w-xs sm:prose-pre:max-w-full prose-sm sm:prose-base md:prose-lg
+          prose-h1:no-underline max-w-6xl mx-auto prose-zinc dark:prose-invert prose-img:rounded-lg"
+        >
+          <ContentRenderer v-if="articles" :value="articles">
+            <template #empty>
+              <p>No content found.</p>
+            </template>
+          </ContentRenderer>
+          <div v-if="articles" class="mt-4 flex gap-2 items-center">
+            <span>Share:</span>
+            <SocialShare
+              v-for="network in ['facebook', 'linkedin']"
+              :key="network"
+              :network="network"
+              :styled="true"
+              :label="false"
+              class="p-2"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="col-span-12 lg:col-span-3">
+        <BlogToc />
       </div>
     </div>
-    <BlogToc />
   </div>
 </template>
+
+

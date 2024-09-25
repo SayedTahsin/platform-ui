@@ -18,10 +18,13 @@ defineOgImageComponent('About', {
   description: 'Dive into cloud development with us and learn  Docker, k8s and many more',
 })
 </script>
-
 <template>
-  <main class="container max-w-6xl mx-auto text-zinc-600">
-    <MainHero />
-    <MainTrending />
-  </main>
+  <div class="dark:bg-slate-950 min-h-screen">
+    <main class="container max-w-6xl mx-auto text-zinc-600">
+      <MainHero />
+      <MainRecent />
+      <MainTrending />
+    </main>
+  </div>
 </template>
+

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, withDefaults } from 'vue'
+import { withDefaults } from 'vue'
 
 // Define interface for props
 interface Props {
@@ -41,7 +41,7 @@ withDefaults(defineProps<Props>(), {
         :alt="alt"
       />
       <div class="px-3 pb-4">
-        <div class="text-black dark:text-zinc-300 pt-3 pb-2">
+        <div class=" dark:text-zinc-300 pt-3 pb-2">
           <!-- Course Title using props.title -->
           <h2 class="text-xl font-semibold pb-1 group-hover:text-sky-700 dark:group-hover:text-sky-400">
             {{ title }}  <!-- Using props.title -->
@@ -57,13 +57,13 @@ withDefaults(defineProps<Props>(), {
               <span>{{ price }} BDT</span>
             </div>
             <div class="flex items-center gap-1">
-              <Icon name="mdi:account" size="2em" class="text-black dark:text-zinc-300" />
+              <Icon name="mdi:account" size="2em" class=" dark:text-zinc-300" />
               <span> {{ studentNumbers }}</span>
             </div>
           </div>
           <!-- Date -->
           <div class="flex items-center mb-2">
-            <Icon name="mdi:calendar" size="1.5em" class="text-black dark:text-zinc-300" />
+            <Icon name="mdi:calendar" size="1.5em" class=" dark:text-zinc-300" />
             <span> Coming Soon</span> <!-- Assuming date is a prop -->
           </div>
         </div>
